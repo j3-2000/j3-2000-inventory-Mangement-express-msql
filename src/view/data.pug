@@ -1,0 +1,155 @@
+//- html
+//-   head
+//-     title Table with Styling
+//-     style.
+//-       h1{
+//-         text-align: center;
+//-       }
+//-       body {
+//-         font-family: 'Arial', sans-serif;
+//-         background-color: #f4f4f4;
+//-         margin: 0;
+//-         padding: 0;
+//-       }
+//-       table {
+//-         width: 70%;
+//-         border-collapse: collapse;
+//-         margin: 20px auto;
+//-         background-color: #fff;
+//-         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+//-       }
+//-       td {
+//-         padding: 15px;
+//-        text-align: left;
+//-         border-bottom: 1px solid #ddd;
+//-         width:fit-content;
+//-       }
+//-       th {
+//-           text-align: left;
+//-         padding: 15px;
+//-         background-color: #4CAF50;
+//-         color: #fff;
+//-       }
+//-       tr:hover {
+//-         background-color: grey ;
+//-       }
+//-   body
+//-     h1 Users Details
+//-     table
+    
+//-       thead
+//-         tr
+//-           th Name
+//-           th Price
+
+//-       tbody
+//-         each product in products
+//-           tr
+//-             td= product.name
+//-             td= product.price
+
+html
+  head
+    title Amazon-like Product Display
+    style.
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f4f4;
+        color: #333;
+      }
+
+      header {
+        background-color: #232f3e;
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 2em;
+      }
+
+      section.product-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 20px;
+      }
+
+      .product {
+        max-width: 300px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin: 10px;
+        overflow: hidden;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .product:hover {
+        transform: scale(1.05);
+      }
+
+      .product img {
+        width: 100%;
+        height: auto;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .product-info {
+        padding: 15px;
+      }
+
+      .product h2 {
+        margin-top: 0;
+        font-size: 1.2em;
+        color: #333;
+      }
+
+      .product p {
+        margin: 10px 0;
+        color: #555;
+      }
+
+      .product button {
+        background-color: #febd69;
+        color: #232f3e;
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        font-weight: bold;
+        transition: background-color 0.3s ease-in-out;
+      }
+
+      .product button:hover {
+        background-color: #e0a652;
+      }
+
+      footer {
+        background-color: #232f3e;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+
+  body
+    header
+      h1 Amazon-like Product Display
+
+    section.product-container
+      each product in products
+        .product
+          .product-info
+            h2= product.name
+            p Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            p Price: 
+              span= product.price
+          button Add to Cart
